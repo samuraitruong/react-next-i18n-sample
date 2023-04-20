@@ -5,6 +5,7 @@ import LanguageSelector from "@/components/LanguageSelector";
 import Link from "next/link";
 import Head from "next/head";
 import { useStaticContent } from "@/hooks/useStaticContent";
+import Content from "@/components/Content";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,8 @@ export default function Home() {
             </li>
           </ul>
         </div>
+
+        <Content />
         <Footer />
       </main>
     </>
