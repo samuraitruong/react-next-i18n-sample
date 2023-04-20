@@ -6,6 +6,8 @@ import Link from "next/link";
 import Head from "next/head";
 import { useStaticContent } from "@/hooks/useStaticContent";
 import Content from "@/components/Content";
+import { StaticContentFromJson } from "@/components/StaticContentFromJson";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,8 +46,17 @@ export default function Home() {
         </div>
 
         <Content />
+        <StaticContentFromJson />
         <Footer />
       </main>
     </>
   );
 }
+
+export const getServerSideProps = async ({ locale }: any) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

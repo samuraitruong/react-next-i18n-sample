@@ -1,0 +1,6 @@
+{
+  "sample": "c'est le contenu du chargement de fichier json statique par i18next test reload",
+  "info": {
+    "level1": "nested 1"
+  }
+}
